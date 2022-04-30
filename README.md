@@ -2,37 +2,12 @@
 Projeto realizado para obtenção de nota na matéria de PROO.
 Objetivo: Criar um programa que simule o funcionamento de uma cantina.
 
+# Integrantes do Grupo
 Aluno: Thiago Vinicius Peixoto dos Santos
 
-# Requisitos Funcionais
+# Sobre a realização do Projeto...
+A realização do projeto foi uma escalada tranquila, alguns problemas aqui e ali que com um pouco de estudo adicional foram resolvidos, acredito que o programa atende, pelo ou menos, 85-90% do que se pede.
 
-Guardar a informação dos itens do estoque da cantina (nome, descrição, preço decompra, preço devendae
-quantidadecomprada, quantidadevendida) - OK
+# Dificuldades do projeto
+Algumas funcionalidades a respeito de Coleções ainda não estavam claras, mas com o esclarecimento de dúvidas em sala de aula mesmo, consegui superar os problemas. Outro problema que tive foi com a declaração de objetos usando try/catch, mas também consegui resolver.
 
-Permitir que o administrador da cantina cadastre novos itens no estoque, ou adicione novas quantidadea itens já
-existentes - OK
-
-Não permitir que sejam cadastrados itens com preços inválidos, inclusive preço devenda menor que o preço de
-compra - OK
-
-Não permitir que a quantidade de itens disponíveis seja inválida - OK
-
-Dar baixa nos itens vendidos do estoque - OK
-
-Mostrar um resumo dos itens esuas quantidades disponíveis ordenado pela descrição ou quantidade disponível,a
-critério do usuário
-
-Mostrar resumo dos itens com quantidade baixa no estoque(abaixo de 50 itens)
-
-Mostrar resumo do lucro/prejuízo de acordo com a baixa dos produtos no estoque
-
-# Requisitos de Desenvolvimento
-funcionar sem erros e as exceções devem ser capturadas
-
-lidar com as condições excepcionais, lançando exceções quando necessário etratando-as deforma adequada
-
-Utilizar a Orientação a Objetos
-
-Utilização de exceções para tratamento de erro
-
-Utilização de coleções (ArrayList por exemplo)

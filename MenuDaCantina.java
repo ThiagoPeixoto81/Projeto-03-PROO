@@ -9,7 +9,7 @@ public class MenuDaCantina {
         this.Estoque = Stock;
     }
 
-
+    // Esse método inicia o menu
     public void Inicia(){
     
         Scanner sc = new Scanner(System.in);
@@ -27,7 +27,7 @@ public class MenuDaCantina {
                     case 2:
 
                         if (Estoque.Produtos.isEmpty()){
-                            System.out.println("Não há nenhum item aqui. Tente adicionar um Item (Opção 1)");
+                            System.out.println("Não há nenhum item aqui. Tente adicionar um Item (Opção 1)\n");
                         }else{
                             Estoque.MostraMenu();
 
@@ -39,11 +39,13 @@ public class MenuDaCantina {
                             Estoque.Adicionaquantidade(index, qnt);
                         }
 
+                        this.Inicia();
                         break;
+
                     case 3:
 
                         if (Estoque.Produtos.isEmpty()){
-                            System.out.println("Não há nenhum item aqui. Tente adicionar um Item (Opção 1)");
+                            System.out.println("Não há nenhum item aqui. Tente adicionar um Item (Opção 1)\n");
                         }else{
                             Estoque.MostraMenu();
 
@@ -55,19 +57,58 @@ public class MenuDaCantina {
                             Estoque.VendeItem(index, qnt);
                             
                     }
-
+                        this.Inicia();
                         break;
                         
                     case 4:
+                        if (Estoque.Produtos.isEmpty()){
+                            System.out.println("Não há nenhum item aqui. Tente adicionar um Item (Opção 1)\n");
+                        }else{
+                            Estoque.MostraItens();
+                        }
 
+                        this.Inicia();
+                        break;
+
+                    case 5:
+
+                        if (Estoque.Produtos.isEmpty()){
+                            System.out.println("Não há nenhum item aqui. Tente adicionar um Item (Opção 1)\n");
+                        }else{
+                            Estoque.ItensEmBaixa();
+                        }
+
+                        this.Inicia();
+                        break;
+                    
+                    case 6:
                         
+                        if (Estoque.Produtos.isEmpty()){
+                            System.out.println("Não há nenhum item aqui. Tente adicionar um Item (Opção 1)\n");
+                        }else{
+                            Estoque.prejuizolucro();
+                        }
+
+                        this.Inicia();
+                        break;
+                    
+                    case 7:
+
+                        System.out.println("Programa encerrado.");
+                        break;
+                    
+                    default:
+
+                        System.out.println("Valor inválido. Tente novamente!\n");
+                        this.Inicia();
+                        break;
                 }
                 
             }catch(InputMismatchException e){
                 System.out.println("Opção inválida. Tente novamente\n");
                 this.Inicia();
             }catch (IndexOutOfBoundsException e){
-                System.out.println("Você tentou acessar um item que não existe. Tente Novamente");
+                System.out.println("Você tentou acessar um item que não existe. Tente Novamente\n");
                 this.Inicia();
             }catch (IllegalArgumentException e){
                 System.out.println(e.getMessage());
@@ -81,27 +122,6 @@ public class MenuDaCantina {
     public static void main(String[] args) {
         Estoque estoque = new Estoque();
         MenuDaCantina menu = new MenuDaCantina(estoque);
-
         menu.Inicia();
-        
-
-        // estoque.AdicionaItem();
-        // estoque.MostraItens();
-
-        // try{
-        //     estoque.VendeItem(0,10);
-        //     estoque.Adicionaquantidade(0, 100);
-        // }catch (IllegalArgumentException e){
-        //     System.out.println(e.getMessage());
-        // }
-        
-        // estoque.ItensEmBaixa();
-        // estoque.MostraItens();
-        
-
-
-        
-        // estoque.ItensEmBaixa();
-        // estoque.prejuizolucro();
     }
 }

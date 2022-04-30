@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,12 +10,14 @@ public class Estoque {
    
   //Mostra itens
   public void MostraItens(){
+    Collections.sort(Produtos);
+    System.out.println("=== Produtos do Estoque ===");
     for (Item a:Produtos){
          System.out.println(a +"\n");
     }
 }
 
-    //Mostra no menu
+    //Exibição dos itens no menu
     public void MostraMenu(){
         int c = 0;
         System.out.println("=== Itens do Estoque ===");
@@ -61,7 +64,7 @@ public class Estoque {
             System.out.println(e.getMessage());
             
         }catch (InputMismatchException e){
-            System.out.println("Insira valores válidos. Tente Novamente");
+            System.out.println("Insira valores válidos. Tente Novamente\n");
 
         }
         
@@ -81,24 +84,25 @@ public class Estoque {
         Produtos.get(index).setQuantidade_vendida(adicionaquantidadevendida + venda);
     }
 
-    System.out.println("Venda concluida!");
+    System.out.println("Venda concluida!\n");
    }
 
 
    //Adiciona quantidade
    public void Adicionaquantidade(int index, double adicao){
        if (adicao < 0 || adicao == 0){
-           throw new IllegalArgumentException("Impossivel adicionar essa quantidade de itens");
+           throw new IllegalArgumentException("Impossivel adicionar essa quantidade de itens\n");
        }else{
            Produtos.get(index).Adicionaquantidade(adicao);
        }
 
-       System.out.println("Quantidade adicionada!");
+       System.out.println("Quantidade adicionada!\n");
    }
 
 
    //Itens Em baixa
    public void ItensEmBaixa(){
+       System.out.println("=== Produtos em baixa ===");
        for (Item a:Produtos){
            if (a.getQuantidade_comprada() < 50){
                ProdutosComBaixas.add(a);
@@ -124,6 +128,7 @@ public class Estoque {
         double preju = 0;
         double lucro = 0;
 
+        System.out.println("=== Resumo Prejuizo/Lucro ===");
         for (Item c:Produtos){
             quantidadedeitensvendidos += c.getQuantidade_vendida();
             quantidadedeitenscomprados += c.getQuantidade_comprada();
@@ -131,7 +136,7 @@ public class Estoque {
             lucro += c.getPreco_venda() * c.getQuantidade_vendida();
         }
 
-        System.out.println("O resumo das vendas da Cantina: " + "\n" +"Total de itens comprados: " + quantidadedeitenscomprados + "\nTotal de itens vendidos: " + quantidadedeitensvendidos + "\nLucro: R$" + lucro + "\nDinheiro gasto na compra de produtos: R$" + preju + "\nBalanço final: R$" + (lucro-preju));
+        System.out.println("\nO resumo das vendas da Cantina: " + "\n" +"Total de itens comprados: " + quantidadedeitenscomprados + "\nTotal de itens vendidos: " + quantidadedeitensvendidos + "\nLucro: R$" + lucro + "\nDinheiro gasto na compra de produtos: R$" + preju + "\nBalanço final: R$" + (lucro-preju) + "\n");
 
     } 
 
